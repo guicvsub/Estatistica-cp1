@@ -10,8 +10,8 @@ if "data" not in st.session_state:
     st.session_state["data"] = df
 
 # Configuração da página
-st.set_page_config(page_title="Dashboard de Distribuições Probabilísticas", layout="wide")
-st.sidebar.markdown("Desenvolvido por Prof. Tiago Marum [THM Estatística](https://thmestatistica.com)")
+st.set_page_config(page_title="guilherme Santiago da silva", layout="wide")
+st.sidebar.markdown("Desenvolvido porguilherme Santiago da Silva  [THM Estatística](https://thmestatistica.com)")
 
 # Adicionando logo com streamlit-extras
 # add_logo("logo.jpeg")
@@ -22,7 +22,7 @@ st.logo("logo.png")
 # Adicionando o logo no body
 st.image("logo.png", width=150)
 
-st.title("Aula de Distribuições Probabilísticas - FIAP")
+st.title("quem sou eu ")
 
 st.write("As distribuições probabilísticas são fundamentais para a Inferência Estatística e Machine Learning, permitindo modelar incertezas e entender padrões nos dados.")
 
