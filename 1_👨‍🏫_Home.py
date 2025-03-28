@@ -20,9 +20,9 @@ st.sidebar.markdown("Desenvolvido porguilherme Santiago da Silva  [THM Estatíst
 st.logo("logo.png")
 
 # Adicionando o logo no body
-st.image("logo.png", width=150)
+st.image("mascote.png", width=150)
 
-st.title("quem sou eu ")
+st.title("Futebol")
 
 st.write("As distribuições probabilísticas são fundamentais para a Inferência Estatística e Machine Learning, permitindo modelar incertezas e entender padrões nos dados.")
 
