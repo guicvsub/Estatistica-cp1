@@ -24,7 +24,7 @@ st.image("mascote.png", width=150)
 
 st.title("Futebol")
 
-st.write("As distribuições probabilísticas são fundamentais para a Inferência Estatística e Machine Learning, permitindo modelar incertezas e entender padrões nos dados.")
+st.write("Contratação certeira ou fiasco milionário? O que os dados revelam sobre o verdadeiro valor dos jogadores em campo?")
 
 st.write("Por exemplo, ao estimar a chance de um cliente converter em uma compra, podemos usar uma distribuição Bernoulli. Já para prever a demanda por um produto, uma distribuição Poisson pode ser aplicada. Modelos de aprendizado de máquina, como redes neurais e regressão logística, também se beneficiam dessas distribuições para ajustar pesos e probabilidades de classificação.")
 
