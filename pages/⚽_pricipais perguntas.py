@@ -8,7 +8,7 @@ import plotly.figure_factory as ff
 from plotnine import *
 
 # Configuração da página
-st.set_page_config(page_title="Dashboard de Distribuições Probabilísticas", layout="wide")
+st.set_page_config(page_title="pricipais perguntas", layout="wide")
 
 # Adicionando o logo
 st.logo("logo.png")
