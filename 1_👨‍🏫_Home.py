@@ -5,13 +5,13 @@ import numpy as np
 from streamlit_extras.app_logo import add_logo
 
 if "data" not in st.session_state:
-    df = pd.read_excel("Dados_InstagramCliente_AULA_3ESP.xlsx", index_col="Post ID")
-    df = df.sort_values(by="Reach", ascending=False)
+    df = pd.read_csv("dados-completos-Ituano.csv")
+
     st.session_state["data"] = df
 
 # Configuração da página
 st.set_page_config(page_title="guilherme Santiago da silva", layout="wide")
-st.sidebar.markdown("Desenvolvido porguilherme Santiago da Silva  [THM Estatística](https://thmestatistica.com)")
+st.sidebar.markdown("Desenvolvido porguilherme Santiago da Silva ")
 
 # Adicionando logo com streamlit-extras
 # add_logo("logo.jpeg")

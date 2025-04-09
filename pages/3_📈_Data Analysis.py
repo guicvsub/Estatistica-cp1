@@ -3,26 +3,43 @@ import pandas as pd
 import numpy as np
 
 st.set_page_config(
-    page_title="Dados",
+    page_title="Análise de Jogadores",
     page_icon="🏃🏼",
     layout="wide"
 )
 
+# Carrega o DataFrame do estado da sessão
 df = st.session_state["data"]
 
-tipos='Todos'
-tipos = np.append(tipos,df["Post type"].unique())
-tipo = st.sidebar.selectbox("Tipo de Post", tipos)
-st.sidebar.markdown("Desenvolvido por Prof. Tiago Marum [THM Estatística](https://thmestatistica.com)")
+# Normaliza colunas (caso haja espaços extras)
+df.columns = df.columns.str.strip()
 
-if tipo == 'Todos':
+# Substitui NaNs por 0 nas colunas numéricas (opcional e ajustável)
+df = df.fillna(0)
+
+# Cria lista de posições únicas
+posicoes = ['Todas']
+posicoes = np.append(posicoes, df["player_position"].unique())
+
+# Filtro na barra lateral
+posicao = st.sidebar.selectbox("Posição do jogador", posicoes)
+st.sidebar.markdown("Desenvolvido por Guilherme Santiago")
+
+# Filtra o DataFrame com base na seleção
+if posicao == 'Todas':
     df_filtered = df
 else:
-    df_filtered = df[(df["Post type"]==tipo)]
+    df_filtered = df[df["player_position"] == posicao]
 
-#df_filtered
-st.dataframe(df_filtered,
-             column_config={
-                 "Likes": st.column_config.ProgressColumn(
-                     "Likes", format="%f", min_value=0, max_value=int(df_filtered["Likes"].max()))
-                 })
+# Exibe a tabela com uma coluna de destaque (ex: Gols)
+st.dataframe(
+    df_filtered,
+    column_config={
+        "statistics_goals": st.column_config.ProgressColumn(
+            "Gols",
+            format="%d",
+            min_value=0,
+            max_value=int(df_filtered["statistics_goals"].max())
+        )
+    }
+)
